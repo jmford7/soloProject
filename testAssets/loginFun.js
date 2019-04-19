@@ -1,13 +1,11 @@
-module.exports = (loginFun, email, password) => {
+module.exports = (loginFun, location, email, password, assertThat, pickleValue) => {
     loginFun
-        .click('@navProfile')
-        .waitForElementPresent('@btnLogin')
-        .click('@btnLogin')
-        .assert.visible('@loginBanner')
+        .click(location)
+        .waitForElementPresent('@btnLogin', 5000)
         .setValue('@emailInput', email)
         .setValue('@passwordInput', password)
         .click('@btnLogin')
         .pause(2000)
-        .assert.containsText('@profileBanner', 'welcome ');
+     .assert.containsText(assertThat, pickleValue);
     return loginFun
 }

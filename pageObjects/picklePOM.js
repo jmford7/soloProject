@@ -1,4 +1,6 @@
-var pickleCommands = {} // see testAssets for functions
+var pickleCommands = { // see testAssets for functions
+    
+}
 
 module.exports = {
     url: 'https://www.livepickleball.com/#/',
