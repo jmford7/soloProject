@@ -1,6 +1,4 @@
-var pickleCommands = {
-
-}
+var pickleCommands = {} // see testAssets for functions
 
 module.exports = {
     url: 'https://www.livepickleball.com/#/',
@@ -56,6 +54,17 @@ module.exports = {
             selector: '//button[contains(text(),"Next Game")]',
             locateStrategy: 'xpath'
         },
+        //Login selectors
+        emailInput: {
+            selector: '//input[contains(@placeholder,"email")]',
+            locateStrategy: 'xpath'
+        }, passwordInput: {
+            selector: '//input[contains(@placeholder,"password")]',
+            locateStrategy: 'xpath'
+        }, loginBanner: {
+            selector: '//h3[contains(text(),"Login")]',
+            locateStrategy: 'xpath'
+        },
         //Match wizard selectors
         tournamentInput: {
             selector: '//input[@placeholder="Tournament Name"]',
@@ -65,88 +74,88 @@ module.exports = {
             locateStrategy: 'xpath'
         },
         //Radial button selectors
-        doublesRad: {
+        radDoubles: {
             selector: '//input[contains(@value,"Doubles")]',
             locateStrategy: 'xpath'
-        }, singlesRad: {
+        }, radSingles: {
             selector: '//input[contains(@value,"Singles")]',
             locateStrategy: 'xpath'
-        }, mensRad: {
+        }, radMens: {
             selector: '//input[contains(@value,"Mens")]',
             locateStrategy: 'xpath'
-        }, mixedRad: {
+        }, radMixed: {
             selector: '//input[contains(@value,"Mixed")]',
             locateStrategy: 'xpath'
-        }, womensRad: {
+        }, radWomens: {
             selector: '//input[contains(@value,"Womens")]',
             locateStrategy: 'xpath'
-        }, openRad: {
+        }, radOpen: {
             selector: '//input[contains(@value,"Open/ Pro")]',
             locateStrategy: 'xpath'
-        }, seniorRad: {
+        }, radSenior: {
             selector: '//input[contains(@value,"Sr Open/ Sr Pro")]',
             locateStrategy: 'xpath'
-        }, fiveRad: {
+        }, radFive: {
             selector: '//input[contains(@value,"5.0")]',
             locateStrategy: 'xpath'
-        }, fourHalfRad: {
+        }, radFourHalf: {
             selector: '//input[contains(@value,"4.5")]',
             locateStrategy: 'xpath'
-        }, fourRad: {
+        }, radFour: {
             selector: '//input[contains(@value,"4.0")]',
             locateStrategy: 'xpath'
-        }, threeHalfRad: {
+        }, radThreeHalf: {
             selector: '//input[contains(@value,"3.5")]',
             locateStrategy: 'xpath'
-        }, threeRad: {
+        }, radThree: {
             selector: '//input[contains(@value,"3.0")]',
             locateStrategy: 'xpath'
-        }, twoHalfRad: {
+        }, radTwoHalf: {
             selector: '//input[contains(@value,"2.5")]',
             locateStrategy: 'xpath'
-        }, notApplicableRad: {
+        }, notApplicable: {
             selector: '//input[contains(@value,"n/a")]',
             locateStrategy: 'xpath'
-        }, openAgeRad: {
+        }, Open: {
             selector: '//form[4]//label[2]',
             locateStrategy: 'xpath'
-        }, seniorRad: {
+        }, Senior: {
             selector: '//input[contains(@value,"Senior")]',
             locateStrategy: 'xpath'
-        }, teensToThirtyRad: {
+        }, teens: {
             selector: '//input[contains(@value,"19-34")]',
             locateStrategy: 'xpath'
-        }, thirtyToFourtyRad: {
+        }, thirtyFive: {
             selector: '//input[contains(@value,"35-49")]',
             locateStrategy: 'xpath'
-        }, fiftyToFiftyFiveRad: {
+        }, fifty: {
             selector: '//input[contains(@value,"50-54")]',
             locateStrategy: 'xpath'
-        }, fiftyFiveToSixtyRad: {
+        }, fiftyFive: {
             selector: '//input[contains(@value,"55-59")]',
             locateStrategy: 'xpath'
-        }, sixtyToSixtyFiveRad: {
+        }, sixty: {
             selector: '//input[contains(@value,"60-64")]',
             locateStrategy: 'xpath'
-        }, sixtyFiveToSeventyRad: {
+        }, sixtyFive: {
             selector: '//input[contains(@value,"65-69")]',
             locateStrategy: 'xpath'
-        }, seventyToSeventyFiveRad: {
+        }, seventy: {
             selector: '//input[contains(@value,"70-74")]',
             locateStrategy: 'xpath'
-        }, seventyFiveToEightyRad: {
+        }, seventyFive: {
             selector: '//input[contains(@value,"75-79")]',
             locateStrategy: 'xpath'
-        }, eightyToEightyFiveRad: {
+        }, eighty: {
             selector: '//input[contains(@value,"80-84")]',
             locateStrategy: 'xpath'
-        }, eightyFiveToNinetyRad: {
+        }, eightyFive: {
             selector: '//input[contains(@value,"85-89")]',
             locateStrategy: 'xpath'
-        }, ninetyToNinetyFiveRad: {
+        }, ninety: {
             selector: '//input[contains(@value,"90-94")]',
             locateStrategy: 'xpath'
-        }, ninetyFivePlusRad: {
+        }, ninetyFive: {
             selector: '//input[contains(@value,"95+")]',
             locateStrategy: 'xpath'
         },
@@ -157,13 +166,24 @@ module.exports = {
         }, playerAdd: {
             selector: '//input[contains(@placeholder,"player name")]',
             locateStrategy: 'xpath'
+        }, playerList: {
+            selector: '//h5',
+            locateStrategy: 'xpath'
         },
-        //Scorekeeper
+
+
+        //Score keeper
         matchBanner: {
             selector: '//div/div/div/div/div/div/span',
             locateStrategy: 'xpath'
         }, courtBanner: {
             selector: '(//p)[1]',
+            locateStrategy: 'xpath'
+        }, profileBanner: {
+            selector: '//h3', //bad selector need to modify
+            locateStrategy: 'xpath'
+        }, newMatchBanner: {
+            selector: '//h5', //bad selector need to modify
             locateStrategy: 'xpath'
         }, scoreOne: {
             selector: '(//h1)[1]',
@@ -171,6 +191,21 @@ module.exports = {
         }, scoreTwo: {
             selector: '(//h1)[2]',
             locateStrategy: 'xpath'
-        }
+        }, fteamMinus: {
+            selector: '(//div//div//div[2]//div//div[2]//div[2]//div//i)[1]',
+            locateStrategy: 'xpath'
+        }, fteamPlus: {
+            selector: '(//div//div//div[2]//div//div[2]//div[2]//div//i)[2]',
+            locateStrategy: 'xpath'
+        }, steamMinus: {
+            selector: '(//div//div//div[2]//div//div[3]//div[2]//div//i)[1]',
+            locateStrategy: 'xpath'
+        }, steamPlus: {
+            selector: '(//div//div//div[2]//div//div[3]//div[2]//div//i)[1]',
+            locateStrategy: 'xpath'
+        }, thanksBanner: {
+            selector: '//h3[contains(text(),"Congratulations")]',
+            locateStrategy: 'xpath'
+        },
     },
 }
